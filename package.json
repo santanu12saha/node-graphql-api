@@ -1,0 +1,32 @@
+{
+  "name": "name-contests-api",
+  "version": "1.0.0",
+  "description": "Name contests API",
+  "main": "index.js",
+  "scripts": {
+    "start": "node lib/index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/santanu12saha/node-graphql-api.git"
+  },
+  "keywords": [
+    "graphql",
+    "mongodb",
+    "postgresql"
+  ],
+  "author": "Santanu Saha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/santanu12saha/node-graphql-api/issues"
+  },
+  "homepage": "https://github.com/santanu12saha/node-graphql-api#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "graphql": "^15.3.0",
+    "mongodb": "^3.6.0",
+    "pg": "^8.3.2"
+  }
+}
