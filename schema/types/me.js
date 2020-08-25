@@ -3,10 +3,12 @@ const {
     GraphQLID, 
     GraphQLNonNull, 
     GraphQLString,
-    GraphQLList
+    GraphQLList,
+    GraphQLInt
 } = require('graphql');
 
 const ContestType = require('./contest');
+const mdb = require('../../database/mdb');
 const pgdb = require('../../database/pgdb');
 
 module.exports = new GraphQLObjectType({
@@ -26,6 +28,24 @@ module.exports = new GraphQLObjectType({
             type: new GraphQLList(ContestType),
             resolve: (obj, args, { pgPool }) => {
                 return pgdb(pgPool).getContests(obj);
+            }
+        },
+        contestsCount: {
+            type: GraphQLInt,
+            resolve: (obj, args, { mPool }, { fieldName }) => {
+                return mdb(mPool).getCounts(obj, fieldName);
+            }
+        },
+        namesCount: {
+            type: GraphQLInt,
+            resolve: (obj, args, { mPool }, { fieldName }) => {
+                return mdb(mPool).getCounts(obj, fieldName);
+            }
+        },
+        votesCount: {
+            type: GraphQLInt,
+            resolve: (obj, args, { mPool }, { fieldName }) => {
+                return mdb(mPool).getCounts(obj, fieldName);
             }
         }
     }
